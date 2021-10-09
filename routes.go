@@ -14,7 +14,6 @@ import (
 )
 
 func createUser(c *gin.Context) {
-	// c.Status(http.StatusCreated)
 	id, _ := c.GetPostForm("Id")
 	name, _ := c.GetPostForm("Name")
 	email, _ := c.GetPostForm("Email")
@@ -51,7 +50,6 @@ func getUser(c *gin.Context) {
 	}
 	// User json
 	c.IndentedJSON(http.StatusOK, result)
-	c.Status(http.StatusOK)
 }
 
 func createPost(c *gin.Context) {
@@ -90,7 +88,6 @@ func getPost(c *gin.Context) {
 	}
 	// Post json
 	c.IndentedJSON(http.StatusOK, result)
-	c.Status(http.StatusOK)
 }
 
 func getUserPosts(c *gin.Context) {
@@ -125,5 +122,4 @@ func getUserPosts(c *gin.Context) {
 
 	// List Posts json
 	c.IndentedJSON(http.StatusOK, entries)
-	c.Status(http.StatusOK)
 }
