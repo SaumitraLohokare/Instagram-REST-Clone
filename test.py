@@ -24,7 +24,7 @@ def addUser(id, name, email, password):
         print("Error creating user")
 
 def addPost(id, userId, caption, imageURL):
-    resp = requests.post("http://localhost:5000/users", {"Id": id, "UserId": userId, "Caption": caption, "ImageURL": imageURL, "Timestamp": datetime.datetime.now()})
+    resp = requests.post("http://localhost:5000/posts", {"Id": id, "UserId": userId, "Caption": caption, "ImageURL": imageURL, "Timestamp": datetime.datetime.now()})
     if resp.status_code == 201:
         print("Post created")
     else:
